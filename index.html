@@ -12,14 +12,38 @@
             <div class="energy-fill" id="energy-fill"></div>
             <span id="energy-text">100/100</span>
         </div>
-        <div class="score">
-            <img src="Oil drop.svg" alt="Oil Drop" class="oil-drop-icon">
-            <span id="score">0</span>
+        <div id="main-page">
+            <div class="score">
+                <img src="Oil drop.svg" alt="Oil Drop" class="oil-drop-icon">
+                <span id="score">0</span>
+            </div>
+            <div class="clickable-area">
+                <img src="oil pump.png" alt="Oil Pump" id="oil-pump" class="img">
+            </div>
         </div>
-        <div class="clickable-area">
-            <img src="oil pump.png" alt="Oil Pump" id="oil-pump" class="img">
+        <div id="store-page" class="hidden">
+            <div class="upgrade">
+                <h2>Пассивная добыча</h2>
+                <p>Цена: 1000 капель</p>
+                <button id="buy-passive">Купить</button>
+            </div>
+            <div class="upgrade">
+                <h2>Увеличение прибыли</h2>
+                <p>Цена: 2000 капель</p>
+                <button id="buy-profit">Купить</button>
+            </div>
+        </div>
+        <div id="other-pages" class="hidden">
+            <p>(в разработке)</p>
+        </div>
+        <div class="buttons">
+            <button id="mine-button">Mine</button>
+            <button id="store-button">Store</button>
+            <button id="refs-button">Refs</button>
+            <button id="earn-button">Earn</button>
         </div>
     </div>
     <script src="app.js"></script>
 </body>
 </html>
+
