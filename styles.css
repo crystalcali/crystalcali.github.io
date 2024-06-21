@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    color: var(--tg-theme-text-color);
+    background: var(--tg-theme-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 390px;
+    text-align: center;
+}
+
+.energy-bar {
+    position: relative;
+    width: 90%;
+    height: 25px;
+    background-color: #333;
+    border-radius: 12px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.energy-fill {
+    height: 100%;
+    width: 100%;
+    background-color: #00bfff;
+    border-radius: 12px;
+    transition: width 0.2s;
+}
+
+.energy-bar span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.oil-drop-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.clickable-area {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.img {
+    transition: transform 0.1s;
+    width: 150px;
+}
+
+.number-popup {
+    position: absolute;
+    color: yellow;
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
