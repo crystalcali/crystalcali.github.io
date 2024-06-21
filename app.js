@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function updateEnergy() {
         energyFill.style.width = `${energy}%`;
-        energyText.textContent = `${energy}/100`;
+        energyText.textContent = `Energy: ${energy}/100`;
     }
 
     function showPage(page) {
@@ -36,29 +36,31 @@ document.addEventListener('DOMContentLoaded', function () {
     earnButton.addEventListener('click', () => showPage(otherPages));
 
     oilPump.addEventListener('click', function (event) {
-        score += profitPerClick;
-        scoreElement.textContent = score;
-        energy--;
-        if (energy < 0) {
-            energy = 0;
+        if (energy > 0) {
+            score += profitPerClick;
+            scoreElement.textContent = score;
+            energy--;
+            if (energy < 0) {
+                energy = 0;
+            }
+            updateEnergy();
+
+            const rect = oilPump.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+
+            const numberPopup = document.createElement('div');
+            numberPopup.textContent = `+${profitPerClick}`;
+            numberPopup.className = 'number-popup';
+            numberPopup.style.left = `${x}px`;
+            numberPopup.style.top = `${y}px`;
+
+            oilPump.parentElement.appendChild(numberPopup);
+            setTimeout(() => numberPopup.remove(), 1000);
+
+            oilPump.style.transform = 'scale(1.03)';
+            setTimeout(() => oilPump.style.transform = 'scale(1)', 100);
         }
-        updateEnergy();
-
-        const rect = oilPump.getBoundingClientRect();
-        const x = event.clientX - rect.left;
-        const y = event.clientY - rect.top;
-
-        const numberPopup = document.createElement('div');
-        numberPopup.textContent = `+${profitPerClick}`;
-        numberPopup.className = 'number-popup';
-        numberPopup.style.left = `${x}px`;
-        numberPopup.style.top = `${y}px`;
-
-        oilPump.parentElement.appendChild(numberPopup);
-        setTimeout(() => numberPopup.remove(), 1000);
-
-        oilPump.style.transform = 'scale(1.03)';
-        setTimeout(() => oilPump.style.transform = 'scale(1)', 100);
     });
 
     setInterval(() => {
@@ -89,4 +91,5 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
 
