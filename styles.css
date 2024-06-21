@@ -1,133 +1,138 @@
 body {
-	margin: 0;
-	padding: 0;
-	font-size: 18px;
-	color: var(--tg-theme-text-color);
-	background: var(--tg-theme-bg-color);
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-	overflow: hidden; /* Запрет на прокрутку и увеличение */
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    color: #FFFFFF;
+    background-color: #1c1c1c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden; /* Запрет на прокрутку и увеличение */
 }
 
 .container {
-	max-width: 390px;
-	text-align: center;
-	width: 100%;
+    max-width: 390px;
+    text-align: center;
+    width: 100%;
 }
 
 .energy-bar {
-	position: fixed; /* Закрепляем сверху */
-	top: 0;
-	width: 100%;
-	height: 25px;
-	background-color: #333;
-	border-radius: 0 0 12px 12px;
+    position: fixed; /* Закрепляем сверху */
+    top: 0;
+    width: 100%;
+    height: 25px;
+    background-color: #333;
+    border-radius: 0 0 12px 12px;
 }
 
 .energy-fill {
-	height: 100%;
-	width: 100%;
-	background-color: #00bfff;
-	border-radius: 0 0 12px 12px;
-	transition: width 0.2s;
+    height: 100%;
+    width: 100%;
+    background-color: #00bfff;
+    border-radius: 0 0 12px 12px;
+    transition: width 0.2s;
 }
 
 .energy-bar span {
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
-	font-size: 14px;
-	color: #FFFFFF;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: #FFFFFF;
 }
 
 .score {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
 }
 
 .oil-drop-icon {
-	width: 24px;
-	height: 24px;
-	margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
 }
 
 .clickable-area {
-	position: relative;
-	display: inline-block;
-	cursor: pointer;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
 }
 
 .img {
-	transition: transform 0.1s;
-	width: 150px;
+    transition: transform 0.1s;
+    width: 90vw; /* Увеличиваем Pump на весь экран */
+    height: 90vh; /* Увеличиваем Pump на весь экран */
 }
 
 .number-popup {
-	position: absolute;
-	color: yellow;
-	animation: fadeOut 1s forwards;
+    position: absolute;
+    color: yellow;
+    animation: fadeOut 1s forwards;
 }
 
 @keyframes fadeOut {
-	0% {
-		opacity: 1;
-		transform: translateY(0);
-	}
-	100% {
-		opacity: 0;
-		transform: translateY(-20px);
-	}
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
 }
 
 .hidden {
-	display: none;
+    display: none;
 }
 
 .buttons {
-	position: fixed;
-	bottom: 0;
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-	background-color: #333;
-	padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #333;
+    padding: 10px 0;
 }
 
 .btn {
-	display: inline-block;
-	padding: 10px 20px;
-	border: none;
-	background: rgb(248, 168, 24);
-	border-radius: 10px;
-	color: #fff;
-	text-transform: uppercase;
-	font-weight: 700;
-	transition: background .2s linear;
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    background: rgb(248, 168, 24);
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    transition: background .2s linear;
 }
 
 .btn:hover {
-	background: lightgreen;
+    background: lightgreen;
 }
 
 .upgrade {
-	margin: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #444;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
 }
 
-.upgrade h2 {
-	color: var(--tg-theme-text-color);
+.upgrade h2, .upgrade p {
+    color: #fff;
+    margin: 0;
 }
 
-.upgrade p {
-	color: var(--tg-theme-text-color);
-}
-
-.upgrade button {
-	margin-top: 10px;
+.upgrade-content {
+    text-align: left;
 }
 
 
